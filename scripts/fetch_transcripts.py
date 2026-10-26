@@ -7,8 +7,8 @@
 - 결과 요약은 transcripts/_last_run.json 에 남긴다 (리포트 작성 시 수집 상태 확인용).
 
 환경변수
-  LOOKBACK_HOURS   기본 30
-  MAX_PER_TAB      탭별로 확인할 최신 영상 수, 기본 30
+  LOOKBACK_HOURS   기본 32 (06시 실행 시 전날 00시 이전까지 포함)
+  MAX_PER_TAB      탭별로 확인할 최신 영상 수, 기본 40
   MIN_DURATION     이보다 짧은 영상(쇼츠 등)은 건너뜀(초), 기본 180
   PROXY_URL        (선택) 유튜브가 IP를 막을 때 사용할 프록시 http://user:pass@host:port
 """
@@ -35,8 +35,8 @@ KST = timezone(timedelta(hours=9))
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "transcripts"
 
-LOOKBACK_HOURS = int(os.getenv("LOOKBACK_HOURS", "30"))
-MAX_PER_TAB = int(os.getenv("MAX_PER_TAB", "30"))
+LOOKBACK_HOURS = int(os.getenv("LOOKBACK_HOURS", "32"))
+MAX_PER_TAB = int(os.getenv("MAX_PER_TAB", "40"))
 MIN_DURATION = int(os.getenv("MIN_DURATION", "180"))
 PROXY_URL = os.getenv("PROXY_URL") or None
 

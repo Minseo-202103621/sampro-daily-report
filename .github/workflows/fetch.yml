@@ -2,9 +2,10 @@ name: Fetch 3protv transcripts
 
 on:
   schedule:
-    # GitHub cron은 UTC 기준 (KST = UTC+9), 실제 실행은 몇 분~수십 분 늦어질 수 있음
-    - cron: "40 0 * * *"   # 09:40 KST — 아침 방송 다시보기 수집 → 리포트 직전
-    - cron: "30 12 * * *"  # 21:30 KST — 오후·저녁 영상이 목록에서 밀리기 전에 수집
+    # 주 실행은 매일 06:00 KST에 Claude 예약 작업이 workflow_dispatch로 직접 호출한다.
+    # 아래 cron은 백업용 (UTC 기준, KST = UTC+9, GitHub 쪽 지연이 있을 수 있음)
+    - cron: "30 13 * * *"  # 22:30 KST — 저녁 영상이 목록에서 밀리기 전에 미리 수집
+    - cron: "40 20 * * *"  # 05:40 KST — 06:00 실행 전 백업 수집
   workflow_dispatch: {}
 
 permissions:
