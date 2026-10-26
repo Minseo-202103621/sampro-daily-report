@@ -1,0 +1,409 @@
+{
+ "run_at": "2026-10-26T20:42:04.998996+09:00",
+ "lookback_hours": 32,
+ "saved": [],
+ "skipped": [],
+ "failed": [
+  {
+   "video_id": "IeUxGW2A7ls",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "MryhgIaA998",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "bjedg0h70n4",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "6ImygpuRcKY",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "RNIPxMqZeas",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "kI4PAxAtk_8",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "biFvaZBdKeE",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "BE3PT5DseT0",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "QmiE1uz1yNc",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "wqQ_KT1sQTM",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "JYJ2nDf4qiA",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "cEg9SetCNY4",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "e8Mcd3RK1L8",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "_ciNDHDHu9Q",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "pfK5cs3z04Q",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "XA7GzN7RnYo",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "SuGP5dZdXQM",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "hZ08cHCGEQc",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "oYwxemi8E6w",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "FANtW-t-aBI",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "BRhAgo6VIds",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "6esEt4-hjqw",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "hNnkvxAZb5U",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "ce-C_sDQKmY",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "MUio0CdmIq0",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "Y5rPdBkJmZQ",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "KvuiB-IKDwA",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "We9DRuOzcpA",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "EIsexsfx724",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "v4POJBbqHaQ",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "p61M7qWCA9s",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "GrPFIU3SJAc",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "7JZef6xLb1s",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "NqknsS3X98I",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "kGsdIHtqmlg",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "BOGalkxQkEc",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "COVlzkuxAc0",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "9bfZdoWxT7o",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "QG1hIUzxfRM",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "Ylobdk7q-xs",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "NL2YfOfCKz4",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "DKPM0LV3vPU",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "-7VPwauiOvk",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "a4vLiofm0wU",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "UTi0swjjhnY",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "xhuxRU8a8rY",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "yDw3mo3Q76c",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "ejai69EoQg8",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "jK_4ucyGGOg",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "K3gLY120WDc",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "f-7YTuhTuaY",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "2KemflG6c68",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "1tY-6u7NQyQ",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "VaWc9oOFpvg",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "hBKI0vXcEtk",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "z30z7cNnV8A",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "O7THUCIKdc0",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "0Wdp1qmkFHE",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "OEGwNsEbJSY",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "HceZZNad4Cc",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "ulRWOUlYeCc",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "ourzQGkp540",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "dMTG6egjx3I",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "OKwzByuBnG4",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "2WPE4kRos0g",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "LS2YoYe5JiQ",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "FE7rQm1o0XE",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "kMuSNu1XcZQ",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "Ima4xO_MR0w",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "-QfEetlNAPA",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "kod3ctXtXZs",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "LNhoGiZ-YvI",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "4yjkcRpnnEE",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "nLSWz_Zq80I",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "cbczepzckgQ",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "_TvJkMxPD4o",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "dEBBDvcow8s",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "SghLnGdVPVc",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "NQKU00EJyN0",
+   "stage": "meta",
+   "error": "no info"
+  },
+  {
+   "video_id": "hwVDn44Ti6c",
+   "stage": "meta",
+   "error": "no info"
+  }
+ ],
+ "candidates": 80
+}
