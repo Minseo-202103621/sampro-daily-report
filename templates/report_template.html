@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>데일리 시황 {{DATE}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#1d1d1b;--sub:#5c5b56;--line:#e3e1da;--accent:#0b5d3b;--up:#c62828;--down:#1565c0;--warn:#a15c00;--chip:#eef3ef}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141513;--card:#1d1f1c;--ink:#ecebe6;--sub:#a3a29b;--line:#30322e;--accent:#5fc28f;--up:#ef6b6b;--down:#6aa8f0;--warn:#e0a54a;--chip:#22302a}}
+:root[data-theme="dark"]{--bg:#141513;--card:#1d1f1c;--ink:#ecebe6;--sub:#a3a29b;--line:#30322e;--accent:#5fc28f;--up:#ef6b6b;--down:#6aa8f0;--warn:#e0a54a;--chip:#22302a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 "Noto Sans KR",system-ui,sans-serif}
+main{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+header{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:20px}
+header .kicker{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:.04em}
+h1{font-size:26px;margin:4px 0 6px;line-height:1.3}
+header .meta{color:var(--sub);font-size:13px}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 18px 8px;margin:16px 0}
+h2{font-size:18px;margin:0 0 10px;display:flex;gap:8px;align-items:baseline}
+h2 .n{color:var(--accent);font-variant-numeric:tabular-nums}
+h3{font-size:15px;margin:16px 0 4px}
+p,li{color:var(--ink)} .sub{color:var(--sub);font-size:13px}
+.tldr{background:var(--chip);border-left:4px solid var(--accent)}
+.tldr li{margin:4px 0}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0 14px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12px;color:var(--sub);font-weight:500}
+td.num{text-align:right;white-space:nowrap}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--sub)}
+.tablewrap{overflow-x:auto}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:0 4px 4px 0}
+.view{border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:10px 0}
+.view .who{font-weight:700;font-size:14px}
+.bar{height:8px;border-radius:4px;background:var(--accent);opacity:.8}
+.qa{border-top:1px dashed var(--line);padding-top:8px;margin-top:8px}
+.qa .q{font-weight:700}
+.warn{color:var(--warn)}
+footer{color:var(--sub);font-size:12px;margin-top:28px;line-height:1.6}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+<!--
+  작성 규칙: 아래 섹션 구조와 클래스를 그대로 유지하고 {{...}} 자리만 채운다.
+  REPORT_GUIDE.md 의 섹션 정의를 따른다. 이 주석은 최종 파일에서 지운다.
+-->
+<header>
+  <div class="kicker">DAILY MARKET BRIEF · 삼프로TV 기반</div>
+  <h1>{{DATE}} ({{요일}}) — {{오늘의 한 줄 헤드라인}}</h1>
+  <div class="meta">분석 영상 {{N}}편 · 수집 구간 {{구간}} · 작성 {{작성시각}} KST</div>
+</header>
+
+<section class="tldr"><h2><span class="n">00</span>3줄 요약</h2><ul>{{...}}</ul></section>
+<section><h2><span class="n">01</span>시장 지표 체크</h2>{{지표 표 + 해석}}</section>
+<section><h2><span class="n">02</span>오늘의 핵심 이슈</h2>{{이슈별 h3 + 설명}}</section>
+<section><h2><span class="n">03</span>삼프로TV 출연자 관점 정리</h2>{{영상별 .view 블록}}</section>
+<section><h2><span class="n">04</span>종합 시황 판단</h2>{{하우스뷰}}</section>
+<section><h2><span class="n">05</span>모델 포트폴리오</h2>{{성향별 표 + 변경 근거}}</section>
+<section><h2><span class="n">06</span>리스크 & 체크포인트</h2>{{...}}</section>
+<section><h2><span class="n">07</span>PB 면접 대비</h2>{{예상 질문 .qa + 오늘의 용어}}</section>
+
+<footer>
+  면접 학습용 자료이며 투자 권유가 아닙니다. 영상 내용은 요약·재구성한 것으로 원문 발언과 다를 수 있습니다.<br>
+  {{출처: 영상 제목·링크, 참고 기사 링크}}
+</footer>
+</main>
+</body>
+</html>
