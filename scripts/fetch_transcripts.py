@@ -6,9 +6,13 @@
 - 자막은 youtube-transcript-api 로 먼저 시도하고, 실패하면 yt-dlp 자동자막으로 재시도한다.
 - 결과 요약은 transcripts/_last_run.json 에 남긴다 (리포트 작성 시 수집 상태 확인용).
 
+사용법
+  python scripts/fetch_transcripts.py              # 어제(KST) 올라온 영상
+  python scripts/fetch_transcripts.py 2026-10-22   # 특정 날짜 영상
+
 환경변수
-  LOOKBACK_HOURS   기본 32 (06시 실행 시 전날 00시 이전까지 포함)
-  MAX_PER_TAB      탭별로 확인할 최신 영상 수, 기본 40
+  LOOKBACK_HOURS   날짜를 안 줄 때만 쓰는 대체 기준(시간), 기본 32
+  MAX_PER_TAB      탭별로 확인할 최신 영상 수, 기본 60
   MIN_DURATION     이보다 짧은 영상(쇼츠 등)은 건너뜀(초), 기본 180
   PROXY_URL        (선택) 유튜브가 IP를 막을 때 사용할 프록시 http://user:pass@host:port
 """
@@ -36,7 +40,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "transcripts"
 
 LOOKBACK_HOURS = int(os.getenv("LOOKBACK_HOURS", "32"))
-MAX_PER_TAB = int(os.getenv("MAX_PER_TAB", "40"))
+MAX_PER_TAB = int(os.getenv("MAX_PER_TAB", "60"))
 MIN_DURATION = int(os.getenv("MIN_DURATION", "180"))
 PROXY_URL = os.getenv("PROXY_URL") or None
 
@@ -49,14 +53,16 @@ def ydl_opts(**extra):
     return opts
 
 
-def list_recent_ids() -> list[str]:
-    ids: list[str] = []
+def list_recent_ids() -> list[tuple[str, str]]:
+    ids: list[tuple[str, str]] = []
+    seen: set[str] = set()
     with yt_dlp.YoutubeDL(ydl_opts(extract_flat="in_playlist", playlistend=MAX_PER_TAB)) as ydl:
         for tab in TABS:
             info = ydl.extract_info(f"{CHANNEL}/{tab}", download=False) or {}
             for e in info.get("entries") or []:
-                if e and e.get("id") and e["id"] not in ids:
-                    ids.append(e["id"])
+                if e and e.get("id") and e["id"] not in seen:
+                    seen.add(e["id"])
+                    ids.append((tab, e["id"]))
     return ids
 
 
@@ -124,8 +130,8 @@ def vtt_to_text(vtt: str) -> str:
 
 def main() -> int:
     now = datetime.now(KST)
-    cutoff = now - timedelta(hours=LOOKBACK_HOURS)
-    run = {"run_at": now.isoformat(), "lookback_hours": LOOKBACK_HOURS, "saved": [], "skipped": [], "failed": []}
+    target = sys.argv[1] if len(sys.argv) > 1 else (now - timedelta(days=1)).strftime("%Y-%m-%d")
+    run = {"run_at": now.isoformat(), "target_date": target, "saved": [], "skipped": [], "failed": []}
 
     try:
         ids = list_recent_ids()
@@ -136,8 +142,9 @@ def main() -> int:
     saved = already_saved()
 
     with yt_dlp.YoutubeDL(ydl_opts()) as ydl:
-        for vid in ids:
-            if vid in saved:
+        done_tabs: set[str] = set()
+        for tab, vid in ids:  # 탭별 최신순
+            if tab in done_tabs or vid in saved:
                 continue
             try:
                 meta = video_meta(ydl, vid)
@@ -151,8 +158,14 @@ def main() -> int:
             if meta["live_status"] in ("is_upcoming", "is_live"):
                 run["skipped"].append({"video_id": vid, "title": title, "reason": meta["live_status"]})
                 continue
-            if not meta["published_at"] or datetime.fromisoformat(meta["published_at"]) < cutoff:
-                continue  # 오래된 영상: 조용히 건너뜀
+            if not meta["published_at"]:
+                continue
+            day = meta["published_at"][:10]
+            if day > target:
+                continue  # 대상 날짜 이후 영상
+            if day < target:
+                done_tabs.add(tab)  # 이 탭은 최신순이므로 더 볼 필요 없음
+                continue
             if (meta["duration_sec"] or 0) < MIN_DURATION:
                 run["skipped"].append({"video_id": vid, "title": title, "reason": "short"})
                 continue
@@ -171,7 +184,6 @@ def main() -> int:
                 continue
 
             text, source = result
-            day = meta["published_at"][:10]
             out = OUT_DIR / day
             out.mkdir(parents=True, exist_ok=True)
             record = {k: v for k, v in meta.items() if not k.startswith("_")}
@@ -183,6 +195,8 @@ def main() -> int:
     OUT_DIR.mkdir(exist_ok=True)
     (OUT_DIR / "_last_run.json").write_text(json.dumps(run, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps({k: (len(v) if isinstance(v, list) else v) for k, v in run.items()}, ensure_ascii=False))
+    for f in run["failed"][:3]:
+        print("FAILED:", f.get("title"), f.get("error"))
     # 목록 자체를 못 가져온 경우만 실패 처리 → Actions 화면에서 빨간불로 보임
     return 1 if "fatal" in run or run["candidates"] == 0 else 0
 
