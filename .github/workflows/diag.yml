@@ -1,22 +1,26 @@
 name: Diagnose
 on: { workflow_dispatch: {} }
+permissions: { contents: write }
 jobs:
   diag:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install -U yt-dlp youtube-transcript-api
-      - name: list
-        run: yt-dlp --flat-playlist --playlist-end 3 --print "%(id)s %(title)s %(timestamp)s %(upload_date)s" https://www.youtube.com/@3protv/videos | tee ids.txt
-      - name: ytdlp-meta
-        continue-on-error: true
-        run: yt-dlp -v --skip-download --print "%(title)s %(timestamp)s" "https://www.youtube.com/watch?v=$(head -1 ids.txt | cut -d' ' -f1)" 2>&1 | tail -25
-      - name: transcript-api
-        continue-on-error: true
-        run: python -c "from youtube_transcript_api import YouTubeTranscriptApi as Y; t=Y().fetch('$(head -1 ids.txt | cut -d' ' -f1)',languages=['ko']); print(len(t.snippets), t.snippets[0].text)" 2>&1 | tail -15
-      - name: rss
-        continue-on-error: true
+      - run: pip install -q -U yt-dlp youtube-transcript-api
+      - name: run
         run: |
-          CID=$(yt-dlp --flat-playlist --playlist-end 1 --print "%(channel_id)s" https://www.youtube.com/@3protv/videos | head -1); echo "CID=$CID"
-          curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=$CID" | grep -o "<published>[^<]*</published>\|<title>[^<]*</title>" | head -8
+          exec > >(tee diag.txt) 2>&1
+          set +e
+          echo "== list"; yt-dlp --flat-playlist --playlist-end 3 --print "%(id)s|%(title)s|%(timestamp)s|%(channel_id)s" https://www.youtube.com/@3protv/videos | tee ids.txt
+          V=$(head -1 ids.txt | cut -d'|' -f1); CID=$(head -1 ids.txt | cut -d'|' -f4)
+          echo "== ytdlp meta $V"; yt-dlp --skip-download --print "%(title)s %(timestamp)s" "https://www.youtube.com/watch?v=$V" 2>&1 | tail -8
+          echo "== ytdlp meta (android/tv clients)"; yt-dlp --skip-download --extractor-args "youtube:player_client=tv,web_safari,android" --print "%(title)s %(timestamp)s" "https://www.youtube.com/watch?v=$V" 2>&1 | tail -8
+          echo "== transcript api"; python -c "from youtube_transcript_api import YouTubeTranscriptApi as Y; t=Y().fetch('$V',languages=['ko']); print(len(t.snippets), t.snippets[0].text)" 2>&1 | tail -6
+          echo "== rss $CID"; curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=$CID" | grep -o "<published>[^<]*</published>" | head -3
+          sleep 1
+      - if: always()
+        run: |
+          git config user.name sampro-bot; git config user.email sampro-bot@users.noreply.github.com
+          git add diag.txt; git commit -m "diag output"; git push
