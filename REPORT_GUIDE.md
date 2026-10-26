@@ -82,3 +82,11 @@
 4. `transcripts/<대상일>/*.json` 과 `transcripts/_last_run.json` 을 작업공간으로 가져온다.
 5. 작업공간의 저장소 클론(`Minseo-202103621/sampro-daily-report`)에 자막을 복사하고, 1~6번 규칙대로 리포트 작성.
 6. 리포트·포트폴리오 기록·자막을 커밋하고 push, HTML은 PC 폴더 `reports/` 에도 쓴 뒤 사용자에게 파일로 보낸다.
+
+### 8-1. 수집 방법 업데이트 (2026-10-26 확인)
+- 연결 PC의 셸(device_bash)도 프록시 때문에 유튜브 접속이 차단된다(403). `fetch_transcripts.py` 는 PC에서 직접 실행할 때만 쓸 수 있다.
+- 대신 **Claude 데스크톱 앱 내장 브라우저**(mcp__remote-devices__Claude_Browser__*)로 수집한다: 채널 `/videos` 페이지의 `ytInitialData` 에서 영상 목록을 얻고, 각 영상 페이지에서 설명란 펼치기 → `스크립트 표시` 버튼 클릭 → `transcript-segment-view-model` 텍스트를 모은다.
+- timedtext API·get_transcript API 직접 호출은 PO 토큰 요구로 실패한다(빈 응답/400).
+- **앱 창이 최소화되면 페이지가 렌더링되지 않아 실패**한다. 사용자에게 앱 창을 띄워 달라고 먼저 안내한다. 같은 탭에 browser_batch 를 동시에 여러 개 보내지 말고, 영상 1편씩 navigate → javascript 순서로 처리한다.
+- 결과가 크면 도구 결과 파일로 저장되므로 그 파일에서 파싱해 `transcripts/<날짜>/` 에 저장한다.
+- 대상일: 장 마감 후(15:30 이후) 요청이고 전날이 주말·휴장일이면 당일 영상을 분석하고 헤더에 그 사실을 적는다.
