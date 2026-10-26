@@ -1,0 +1,22 @@
+name: Diagnose
+on: { workflow_dispatch: {} }
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -U yt-dlp youtube-transcript-api
+      - name: list
+        run: yt-dlp --flat-playlist --playlist-end 3 --print "%(id)s %(title)s %(timestamp)s %(upload_date)s" https://www.youtube.com/@3protv/videos | tee ids.txt
+      - name: ytdlp-meta
+        continue-on-error: true
+        run: yt-dlp -v --skip-download --print "%(title)s %(timestamp)s" "https://www.youtube.com/watch?v=$(head -1 ids.txt | cut -d' ' -f1)" 2>&1 | tail -25
+      - name: transcript-api
+        continue-on-error: true
+        run: python -c "from youtube_transcript_api import YouTubeTranscriptApi as Y; t=Y().fetch('$(head -1 ids.txt | cut -d' ' -f1)',languages=['ko']); print(len(t.snippets), t.snippets[0].text)" 2>&1 | tail -15
+      - name: rss
+        continue-on-error: true
+        run: |
+          CID=$(yt-dlp --flat-playlist --playlist-end 1 --print "%(channel_id)s" https://www.youtube.com/@3protv/videos | head -1); echo "CID=$CID"
+          curl -s "https://www.youtube.com/feeds/videos.xml?channel_id=$CID" | grep -o "<published>[^<]*</published>\|<title>[^<]*</title>" | head -8
