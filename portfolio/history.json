@@ -1,1 +1,140 @@
-[]
+[
+ {
+  "date": "2026-10-26",
+  "analysis_target": "2026-10-26",
+  "house_view": "중립",
+  "asset_views": {
+   "국내주식": "중립",
+   "미국주식": "중립",
+   "국내채권": "비중확대",
+   "해외채권": "중립",
+   "달러": "비중축소",
+   "금": "중립",
+   "원자재": "중립"
+  },
+  "portfolios": {
+   "안정형": [
+    {
+     "asset": "국내주식",
+     "vehicle": "KODEX 200 (069500)",
+     "weight": 10
+    },
+    {
+     "asset": "미국주식",
+     "vehicle": "TIGER 미국배당다우존스 (458730)",
+     "weight": 10
+    },
+    {
+     "asset": "국내채권",
+     "vehicle": "KODEX 종합채권(AA-이상)액티브 (273130)",
+     "weight": 35
+    },
+    {
+     "asset": "해외채권",
+     "vehicle": "TIGER 미국채10년선물 (305080)",
+     "weight": 10
+    },
+    {
+     "asset": "금",
+     "vehicle": "ACE KRX금현물 (411060)",
+     "weight": 5
+    },
+    {
+     "asset": "리츠·인프라",
+     "vehicle": "TIGER 리츠부동산인프라 (329200)",
+     "weight": 5
+    },
+    {
+     "asset": "현금성",
+     "vehicle": "KODEX CD금리액티브(합성) (459580)",
+     "weight": 25
+    }
+   ],
+   "중립형": [
+    {
+     "asset": "국내주식",
+     "vehicle": "KODEX 200 (069500)",
+     "weight": 20
+    },
+    {
+     "asset": "미국주식",
+     "vehicle": "TIGER 미국S&P500 (360750)",
+     "weight": 15
+    },
+    {
+     "asset": "미국주식(배당)",
+     "vehicle": "TIGER 미국배당다우존스 (458730)",
+     "weight": 5
+    },
+    {
+     "asset": "국내채권",
+     "vehicle": "KODEX 종합채권(AA-이상)액티브 (273130)",
+     "weight": 25
+    },
+    {
+     "asset": "해외채권",
+     "vehicle": "TIGER 미국채10년선물 (305080)",
+     "weight": 10
+    },
+    {
+     "asset": "금",
+     "vehicle": "ACE KRX금현물 (411060)",
+     "weight": 7
+    },
+    {
+     "asset": "리츠·인프라",
+     "vehicle": "TIGER 리츠부동산인프라 (329200)",
+     "weight": 3
+    },
+    {
+     "asset": "현금성",
+     "vehicle": "KODEX CD금리액티브(합성) (459580)",
+     "weight": 15
+    }
+   ],
+   "공격형": [
+    {
+     "asset": "국내주식",
+     "vehicle": "KODEX 200 (069500)",
+     "weight": 30
+    },
+    {
+     "asset": "미국주식",
+     "vehicle": "TIGER 미국S&P500 (360750)",
+     "weight": 15
+    },
+    {
+     "asset": "미국주식(성장)",
+     "vehicle": "TIGER 미국나스닥100 (133690)",
+     "weight": 10
+    },
+    {
+     "asset": "국내채권",
+     "vehicle": "KODEX 종합채권(AA-이상)액티브 (273130)",
+     "weight": 15
+    },
+    {
+     "asset": "해외채권",
+     "vehicle": "TIGER 미국채10년선물 (305080)",
+     "weight": 5
+    },
+    {
+     "asset": "금",
+     "vehicle": "ACE KRX금현물 (411060)",
+     "weight": 8
+    },
+    {
+     "asset": "리츠·인프라",
+     "vehicle": "TIGER 리츠부동산인프라 (329200)",
+     "weight": 2
+    },
+    {
+     "asset": "현금성",
+     "vehicle": "KODEX CD금리액티브(합성) (459580)",
+     "weight": 15
+    }
+   ]
+  },
+  "changes_summary": "첫 리포트: 슈퍼위크(FOMC·하이닉스·삼성전자·빅테크)와 미 중간선거 앞 중립 편성. 국내채권·현금성으로 이벤트 후 분할매수 실탄 확보."
+ }
+]
