@@ -1,28 +1,7 @@
 {
- "run_at": "2026-10-26T21:35:00+09:00",
- "method": "Claude 데스크톱 앱 내장 브라우저(스크립트 패널)",
- "target_date": "2026-10-26",
- "saved": [
-  "MryhgIaA998",
-  "6ImygpuRcKY",
-  "RNIPxMqZeas",
-  "e8Mcd3RK1L8",
-  "_ciNDHDHu9Q",
-  "biFvaZBdKeE"
- ],
- "read_not_archived": [
-  "bjedg0h70n4",
-  "BE3PT5DseT0",
-  "JYJ2nDf4qiA"
- ],
- "skipped": [
-  "QmiE1uz1yNc",
-  "wqQ_KT1sQTM",
-  "cEg9SetCNY4",
-  "IeUxGW2A7ls",
-  "UCVU2GhXzEI",
-  "kI4PAxAtk_8"
- ],
- "note": "PC 셸은 유튜브 접속이 프록시로 차단됨. 브라우저 방식은 앱 창이 최소화되면 실패.",
+ "run_at": "2026-10-27T20:10:00+09:00",
+ "target_date": "2026-10-27",
+ "fatal": "PC not connected to bridge — 내장 브라우저 사용 불가",
+ "saved": [],
  "failed": []
 }
