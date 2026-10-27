@@ -1,7 +1,15 @@
 {
- "run_at": "2026-10-27T20:10:00+09:00",
+ "run_at": "2026-10-27T20:50:00+09:00",
  "target_date": "2026-10-27",
- "fatal": "PC not connected to bridge — 내장 브라우저 사용 불가",
- "saved": [],
+ "method": "내장 브라우저(발췌 수집, 영상당 약 7~9천자)",
+ "read": [
+  "dzwyXb5Bf_k",
+  "B6wNEKADPOI",
+  "ZCXo5sjfzEg",
+  "jqXImayGUIc",
+  "GwUnFNcj0sk",
+  "bSSJR_xnyo4"
+ ],
+ "note": "발췌만 읽어 전문 아카이브는 저장하지 않음",
  "failed": []
 }
