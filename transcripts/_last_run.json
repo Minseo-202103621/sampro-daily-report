@@ -1,15 +1,13 @@
 {
- "run_at": "2026-10-27T20:50:00+09:00",
- "target_date": "2026-10-27",
- "method": "내장 브라우저(발췌 수집, 영상당 약 7~9천자)",
+ "run_at": "2026-10-28T21:45:00+09:00",
+ "target_date": "2026-10-28",
+ "method": "내장 브라우저(발췌 수집)",
  "read": [
-  "dzwyXb5Bf_k",
-  "B6wNEKADPOI",
-  "ZCXo5sjfzEg",
-  "jqXImayGUIc",
-  "GwUnFNcj0sk",
-  "bSSJR_xnyo4"
+  "ytsRGIP_NEU",
+  "AJXGpwbf5BQ",
+  "CvCCUkLwd64",
+  "GtYw6bPWuG4",
+  "UUG9y8OzB70"
  ],
- "note": "발췌만 읽어 전문 아카이브는 저장하지 않음",
  "failed": []
 }
