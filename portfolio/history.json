@@ -412,5 +412,143 @@
    ]
   },
   "changes_summary": "상향 조건 충족(외국인 2일 연속 순매수, 하이닉스 100조 환원): 중립형 국내주식 +3%p/현금 −3%p, 공격형 +5%p/−5%p. 국내주식 비중확대, 하우스뷰 중립 유지."
+ },
+ {
+  "date": "2026-10-29",
+  "analysis_target": "2026-10-29",
+  "house_view": "중립",
+  "asset_views": {
+   "국내주식": "비중확대",
+   "미국주식": "중립",
+   "국내채권": "비중확대",
+   "해외채권": "중립",
+   "달러": "비중축소",
+   "금": "중립",
+   "원자재": "중립"
+  },
+  "portfolios": {
+   "안정형": [
+    {
+     "asset": "국내주식",
+     "vehicle": "KODEX 200 (069500)",
+     "weight": 10
+    },
+    {
+     "asset": "미국주식",
+     "vehicle": "TIGER 미국배당다우존스 (458730)",
+     "weight": 10
+    },
+    {
+     "asset": "국내채권",
+     "vehicle": "KODEX 종합채권(AA-이상)액티브 (273130)",
+     "weight": 35
+    },
+    {
+     "asset": "해외채권",
+     "vehicle": "TIGER 미국채10년선물 (305080)",
+     "weight": 10
+    },
+    {
+     "asset": "금",
+     "vehicle": "ACE KRX금현물 (411060)",
+     "weight": 5
+    },
+    {
+     "asset": "리츠·인프라",
+     "vehicle": "TIGER 리츠부동산인프라 (329200)",
+     "weight": 5
+    },
+    {
+     "asset": "현금성",
+     "vehicle": "KODEX CD금리액티브(합성) (459580)",
+     "weight": 25
+    }
+   ],
+   "중립형": [
+    {
+     "asset": "국내주식",
+     "vehicle": "KODEX 200 (069500)",
+     "weight": 23
+    },
+    {
+     "asset": "미국주식",
+     "vehicle": "TIGER 미국S&P500 (360750)",
+     "weight": 15
+    },
+    {
+     "asset": "미국주식(배당)",
+     "vehicle": "TIGER 미국배당다우존스 (458730)",
+     "weight": 5
+    },
+    {
+     "asset": "국내채권",
+     "vehicle": "KODEX 종합채권(AA-이상)액티브 (273130)",
+     "weight": 25
+    },
+    {
+     "asset": "해외채권",
+     "vehicle": "TIGER 미국채10년선물 (305080)",
+     "weight": 10
+    },
+    {
+     "asset": "금",
+     "vehicle": "ACE KRX금현물 (411060)",
+     "weight": 7
+    },
+    {
+     "asset": "리츠·인프라",
+     "vehicle": "TIGER 리츠부동산인프라 (329200)",
+     "weight": 3
+    },
+    {
+     "asset": "현금성",
+     "vehicle": "KODEX CD금리액티브(합성) (459580)",
+     "weight": 12
+    }
+   ],
+   "공격형": [
+    {
+     "asset": "국내주식",
+     "vehicle": "KODEX 200 (069500)",
+     "weight": 35
+    },
+    {
+     "asset": "미국주식",
+     "vehicle": "TIGER 미국S&P500 (360750)",
+     "weight": 15
+    },
+    {
+     "asset": "미국주식(성장)",
+     "vehicle": "TIGER 미국나스닥100 (133690)",
+     "weight": 10
+    },
+    {
+     "asset": "국내채권",
+     "vehicle": "KODEX 종합채권(AA-이상)액티브 (273130)",
+     "weight": 15
+    },
+    {
+     "asset": "해외채권",
+     "vehicle": "TIGER 미국채10년선물 (305080)",
+     "weight": 5
+    },
+    {
+     "asset": "금",
+     "vehicle": "ACE KRX금현물 (411060)",
+     "weight": 8
+    },
+    {
+     "asset": "리츠·인프라",
+     "vehicle": "TIGER 리츠부동산인프라 (329200)",
+     "weight": 2
+    },
+    {
+     "asset": "현금성",
+     "vehicle": "KODEX CD금리액티브(합성) (459580)",
+     "weight": 10
+    }
+   ]
+  },
+  "changes_summary": "전 성향 유지. 원복 조건 절반만 충족(외국인 약 3천억 순매도, 종가 5,937로 5,900 상회). 삼성전자 환원 1월 연기, 알파벳 FCF 적자."
  }
 ]
