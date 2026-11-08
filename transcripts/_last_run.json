@@ -1,11 +1,15 @@
 {
- "run_at": "2026-10-29T21:10:00+09:00",
- "target_date": "2026-10-29",
- "method": "내장 브라우저(발췌)",
+ "run_at": "2026-11-08T18:30:00+09:00",
+ "target_date": "2026-11-06~11-08",
+ "method": "내장 브라우저(발췌, 영상당 약 6~7천자)",
  "read": [
-  "hUcXSS7PIZo"
+  "-6ktwDvP4vM",
+  "oBJe0uI0WTc",
+  "RZRElH1I-Ac",
+  "s9BL6HGZTxE",
+  "4Z5wNpIrOLs",
+  "we_GMJztwNo",
+  "vXn_cVkZ7yo"
  ],
- "failed": [
-  "lAztrWZ4TEo (브라우저 창 숨김으로 렌더링 안 됨)"
- ]
+ "failed": []
 }
