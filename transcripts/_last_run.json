@@ -1,15 +1,15 @@
 {
- "run_at": "2026-11-08T18:30:00+09:00",
- "target_date": "2026-11-06~11-08",
- "method": "내장 브라우저(발췌, 영상당 약 6~7천자)",
- "read": [
-  "-6ktwDvP4vM",
-  "oBJe0uI0WTc",
-  "RZRElH1I-Ac",
-  "s9BL6HGZTxE",
-  "4Z5wNpIrOLs",
-  "we_GMJztwNo",
-  "vXn_cVkZ7yo"
- ],
- "failed": []
+  "run_at": "2026-11-14T14:30:00+09:00",
+  "target_date": "2026-11-14",
+  "method": "Claude desktop built-in browser transcript panel (excerpts)",
+  "read": [
+    "SKNqY7mDNTw",
+    "cpb6wIQIK2Q",
+    "7JW-tOHTy2I",
+    "9e-V_r0N-qI",
+    "w9Xu28dD8tg",
+    "BIhFDJtoK6k",
+    "p7m602W5tg4"
+  ],
+  "failed": []
 }
