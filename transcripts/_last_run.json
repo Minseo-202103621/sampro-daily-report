@@ -1,14 +1,14 @@
 {
-  "run_at": "2026-11-16T21:30:00+09:00",
-  "target_date": "2026-11-16",
+  "run_at": "2026-11-17T21:30:00+09:00",
+  "target_date": "2026-11-17",
   "method": "Claude desktop built-in browser transcript panel (FULL transcripts)",
   "read": [
-    "W3AvtA5OwVE",
-    "lChAcS0iIaA",
-    "1pne_I6ZlYE",
-    "Of8HJe9eNYw",
-    "UihZAstNiGU",
-    "ue4sG-vBq7Y"
+    "4x1cDlOVNCI",
+    "xZHld6KdReU",
+    "-CBtnYZLrXs",
+    "XpIrmzb-5_A",
+    "XfTLxMrKirQ",
+    "b8x1LtnwzJA"
   ],
   "failed": []
 }
