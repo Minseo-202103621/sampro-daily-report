@@ -1,11 +1,11 @@
 {
-  "run_at": "2026-11-18T08:40:00+09:00",
+  "run_at": "2026-11-18T08:45:00+09:00",
   "target_date": "2026-11-18",
-  "method": "Official releases + wire reports; Sampro post-earnings videos had no captions yet and browser pane hidden",
-  "read": [],
-  "failed": [
-    "2NXRZFCSWcs",
+  "method": "Official releases + wire reports + Sampro FULL transcripts (post-earnings)",
+  "read": [
     "E2-V6z2WQzo",
+    "2NXRZFCSWcs",
     "tB7T2h2hbYc"
-  ]
+  ],
+  "failed": []
 }
