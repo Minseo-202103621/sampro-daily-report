@@ -1,14 +1,11 @@
 {
-  "run_at": "2026-11-17T21:30:00+09:00",
-  "target_date": "2026-11-17",
-  "method": "Claude desktop built-in browser transcript panel (FULL transcripts)",
-  "read": [
-    "4x1cDlOVNCI",
-    "xZHld6KdReU",
-    "-CBtnYZLrXs",
-    "XpIrmzb-5_A",
-    "XfTLxMrKirQ",
-    "b8x1LtnwzJA"
-  ],
-  "failed": []
+  "run_at": "2026-11-18T08:40:00+09:00",
+  "target_date": "2026-11-18",
+  "method": "Official releases + wire reports; Sampro post-earnings videos had no captions yet and browser pane hidden",
+  "read": [],
+  "failed": [
+    "2NXRZFCSWcs",
+    "E2-V6z2WQzo",
+    "tB7T2h2hbYc"
+  ]
 }
